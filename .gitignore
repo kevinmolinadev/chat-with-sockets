@@ -1,0 +1,33 @@
+﻿# Folders
+[Bb]in/
+[Oo]bj/
+build/
+publish/
+
+# Users config
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IDEs
+.vs/
+.vscode/
+.idea/
+
+# NunGet
+*.nupkg
+packages/
+
+# .NetCore
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# System Files
+Thumbs.db
+Desktop.ini
+
+# Debug and Logs
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
