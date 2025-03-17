@@ -115,7 +115,7 @@ namespace ChatWP_P2P.Services
                 while (client.Connected)
                 {
                     var message = reader.ReadLine();
-                    if (message is null) break;
+                    if (message is null) continue;
 
                     var parts = message.Split("|");
 
@@ -164,7 +164,7 @@ namespace ChatWP_P2P.Services
         {
             var networkInterface = NetworkInterface.GetAllNetworkInterfaces()
                 .FirstOrDefault(nic => nic.OperationalStatus == OperationalStatus.Up &&
-                                       nic.GetIPProperties().UnicastAddresses.Any(ip => ip.Address.AddressFamily == AddressFamily.InterNetwork));
+                                       nic.GetIPProperties().UnicastAddresses.Any(ip => ip.Address.AddressFamily == AddressFamily.InterNetwork && ip.PrefixOrigin == PrefixOrigin.Dhcp));
 
             if (networkInterface is null)
                 throw new Exception("Sin Interfaces activas");
